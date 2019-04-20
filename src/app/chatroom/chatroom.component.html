@@ -1,12 +1,12 @@
 <div id="mario-chat">
     <h2>{{ username }}</h2>
     <span><i *ngIf="isTyping" class="isTyping">typing...</i></span>
-    <div id="chat-window">
+    <div   #scrollMe id="chat-window" [scrollTop]="scrollMe.scrollHeight">
         <div *ngFor="let item of messageArray">
             <p [class.userMessage] = "item.user == userService.getLoggedInUser().username" [class.secUserMessage]="item.user != userService.getLoggedInUser().username">{{ item.message }}</p>                
         </div>
         <!-- <div id="feedback"></div> -->
     </div>
-    <input (keypress)="typing()" [(ngModel)]="message" name="message" type="text" placeholder="Message" />            
+    <input (keypress)="typing()" [(ngModel)]="message" name="message" type="text" placeholder="Message" (keyup.enter)="sendMessage()"/>            
     <button id="send" (click)="sendMessage()">Send</button>    
 </div>
