@@ -85,21 +85,25 @@ input{
 
 .userMessage {
     width: fit-content;
-    max-width: 70%;
     background-color: #5B9B5B;
     padding: 10px;
     border-radius: 5px;
-    margin-top: 1px;
+    margin-top: 4px;
+    margin-left: 75%;
     color: white;
+    text-align: right;
+    box-shadow: 3px 1px 9px 0px black;
 }
+
 
 .secUserMessage {
     width: fit-content;
     max-width: 70%;
     background-color: white;
     padding: 10px;
+    margin-left: 2%;
     border-radius: 5px;
-    margin-top: 1px;
+    margin-top: 4px;
     color: black;
 }
 

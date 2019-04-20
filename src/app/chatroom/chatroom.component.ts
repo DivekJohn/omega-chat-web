@@ -48,7 +48,12 @@ export class ChatroomComponent implements OnInit {
   }
 
   sendMessage() {
-    this.webSocketService.sendMessage({room: this.chatroom, user: this.userService.getLoggedInUser().username, message: this.message});
+    this.message ?
+    this.webSocketService
+    .sendMessage({
+      room: this.chatroom,
+      user: this.userService.getLoggedInUser().username, message: this.message
+    }) : alert('message cannot be empty');
     this.message = '';
   }
 
